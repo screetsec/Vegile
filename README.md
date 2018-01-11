@@ -1,7 +1,7 @@
 # Vegile
 
-[![Version](https://img.shields.io/badge/TheFatRat-1.9.5-brightgreen.svg?maxAge=259200)]()
-[![Version](https://img.shields.io/badge/Codename-Whistle-red.svg?maxAge=259200)]()
+[![Version](https://img.shields.io/badge/Vegile-brightgreen.svg?maxAge=259200)]()
+[![Version](https://img.shields.io/badge/Codename-BojoGalak-red.svg?maxAge=259200)]()
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
 [![Build](https://img.shields.io/badge/Supported_OS-Linux-orange.svg)]()
 
