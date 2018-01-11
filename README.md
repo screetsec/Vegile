@@ -4,7 +4,7 @@
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
 [![Build](https://img.shields.io/badge/Supported_OS-Linux-orange.svg)]()
 
-Vegile is a tool for post exploitation in linux.
+Vegile is a tool for post exploitation echniquesin linux. Post Exploitation techniques will ensure that we maintain some level of access and can potentially lead to deeper footholds into our targets trusted network.
 
 ## :book: How it works
 
@@ -28,3 +28,20 @@ Running Vegile without any parameters will give a helpful list of the most commo
 - Vegile -i / --inject  [backdoor/rootkit]
 - Vegile -u / --unlimited [backdoor/rootkit]
 - Vegile -h / --help 
+
+
+## :octocat: Credits
+
+- Thanks to allah 
+- Dracos Linux from Scratch Indonesia ( Awesome Penetration os ), you can see in http://dracos-linux.org/ 
+- WingkoColi , Reversing ID , IndoXploit , Backbox Indonesia and Indonesia Backtrack Team .
+- Offensive Security for the awesome OS ( http://www.offensive-security.com/ )
+- http://www.kali.org/ Kali Linux
+- www.github.com/gianlucaborello to give a reference 
+- And another open sources tool in github
+
+
+
+## Disclaimer
+
+***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this tool ( Edo -m- ).***
