@@ -13,9 +13,7 @@
 ## :book: How it works
 
 This tool will setting up your ***backdoor/rootkits***
-when backdoor already setup it will be ***hidden*** your spesisifc process,***unlimited*** your ***session*** in metasploit and ***transparent***.
-Even when it **killed**, it will **re-run again**. There always be a procces which while **run** another process,
-So we can assume that this procces is **unstopable** like a **Ghost in The Shell**
+when backdoor already setup it will be ***hidden*** your spesisifc process,***unlimited*** your ***session*** in metasploit and ***transparent***. Even when it **killed**, it will **re-run again**. There always be a procces which while **run** another process,So we can assume that this procces is **unstopable** like a **Ghost in The Shell**
 
 #### READ THIS
 
