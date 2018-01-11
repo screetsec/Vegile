@@ -14,3 +14,16 @@ So we can assume that this procces is unstopable like a Ghost in The Shell
 ### Donate
 - If this project very help you to penetration testing  and u want support me , you can give me a cup of coffee :)
 - [![Donation](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://blockchain.info/id/address/1NuNTXo7Aato7XguFkvwYnTAFV2immXmjS)
+
+## Getting Started
+1. ```git clone https://github.com/Screetsec/TheFatRat.git```
+2. ```cd TheFatRat```
+3. ```chmod +x setup.sh && ./setup.sh```
+
+## :book: How it works
+
+* Extract The lalin-master to your home or another folder
+* chmod +x fatrat
+* chmod +x powerfull.sh
+* And run the tools ( ./fatrat )
+* Easy to Use just input your number
