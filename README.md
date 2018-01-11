@@ -4,7 +4,7 @@
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
 [![Build](https://img.shields.io/badge/Supported_OS-Linux-orange.svg)]()
 
-**Vegile** is a tool for **Post exploitation** Techniquesin linux. **Post Exploitation** techniques will ensure that we maintain some level of **access and can potentially** lead to **deeper** footholds into our targets **trusted network**.
+**Vegile** is a tool for **Post exploitation** Techniquesin linux. Post Exploitation techniques will ensure that we maintain some level of **access and can potentially** lead to **deeper** footholds into our targets **trusted network**.
 
 ### Donate
 - If this project very help you to penetration testing  and u want support me , you can give me a cup of coffee :)
@@ -12,8 +12,8 @@
 
 ## :book: How it works
 
-This tool will setting up your **backdoor/rootkits**
-when backdoor already setup it will be **hidden your spesisifc process** ,**unlimited** your **session** in metasploit and transparent.
+This tool will setting up your ***backdoor/rootkits***
+when backdoor already setup it will be **hidden your spesisifc process** ,***unlimited*** your ***session*** in metasploit and ***transparent***.
 Even when it **killed**,it will **re-run again** . There always be a procces which while **run** another process,
 So we can assume that this procces is **unstopable** like a **Ghost in The Shell**
 
@@ -34,8 +34,8 @@ So we can assume that this procces is **unstopable** like a **Ghost in The Shell
 ## Using Vegile
 Running Vegile without any parameters will give a helpful list of the most common options. you can use command : 
 
-- Vegile -i / --inject  [backdoor/rootkit]
-- Vegile -u / --unlimited [backdoor/rootkit]
+- Vegile -i / --inject  **[backdoor/rootkit]**
+- Vegile -u / --unlimited **[backdoor/rootkit]**
 - Vegile -h / --help 
 
 
