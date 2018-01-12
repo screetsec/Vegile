@@ -15,6 +15,9 @@ BlueF='\e[1;34m' #Biru
 RESET="\033[00m" #normal
 orange='\e[38;5;166m'
 
+#Checking if user is root
+[[ `id -u` -eq 0 ]] || { echo -e $red "You Must Get root acess to run this post exploitation "; exit 1; }
+
 function banner() {
 clear
 echo -e "$okegreen"
