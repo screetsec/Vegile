@@ -55,7 +55,7 @@ Running Vegile without any parameters will give a helpful list of the most commo
 - Bash.ID , WingkoColi , Reversing ID , IndoXploit , Backbox Indonesia , Depok Cyber Security and Indonesia Backtrack Team .
 - Offensive Security for the awesome OS ( http://www.offensive-security.com/ )
 - http://www.kali.org/ Kali Linux
-- gianlucaborello to give a reference 
+- gianlucaborello to give a reference and some idea [ https://sysdig.com/blog/hiding-linux-processes-for-fun-and-profit/ ] 
 - And another open sources tool in github
 
 
