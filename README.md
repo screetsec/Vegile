@@ -63,4 +63,4 @@ Running Vegile without any parameters will give a helpful list of the most commo
 
 ## Disclaimer
 
-***Note: modifications, changes, or alterations to this sourcecode is acceptable, however, any public releases utilizing this code must be approved by writen this tool ( Edo -m- ).***
+***Note: modifications, changes, or alterations to this sourcecode is acceptable, however, any public releases utilizing this code must be approved by writen this tool ( Edo maland ).***
